@@ -14,10 +14,13 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject niveauxPanel;
 
+    [Header("Animations")] 
+    [SerializeField] private Animator anim;
+    [SerializeField] private string niveauTriggerName = "Niveau";
 
     public void EnableNiveauPanel()
     {
-        this.niveauxPanel.SetActive(!this.niveauxPanel.activeSelf);
+        this.anim.SetTrigger(this.niveauTriggerName);
     }
 
     public void EnableCreditsPanel()
