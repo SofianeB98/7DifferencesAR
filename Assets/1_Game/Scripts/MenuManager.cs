@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Vuforia;
 
 public class MenuManager : MonoBehaviour
 {
