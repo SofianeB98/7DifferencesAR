@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6f9a6f0d4fe904a8ef7ef450126b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 2
+  waitTime: 0.1
+  fadeScreenTime: 2
   onSceneLoading:
     m_PersistentCalls:
       m_Calls: []
