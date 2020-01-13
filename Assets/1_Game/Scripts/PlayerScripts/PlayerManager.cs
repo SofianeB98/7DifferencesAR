@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour
@@ -11,21 +7,20 @@ public class PlayerManager : MonoBehaviour
     private int currentShotNumber = 10;
 
     [SerializeField] private UnityEvent onShotNumberEmpty;
-    [SerializeField] private TextMeshProUGUI txt;
+    
     private void Awake()
     {
         this.currentShotNumber = defaultShotNumber;
     }
-
-    private void Update()
+    
+    public void Shoot()
     {
-        txt.text = this.currentShotNumber.ToString();
-    }
-
-    public void Shoot(Error er)
-    {
-        if (er == null)
-            this.txt.text = "NO ERRR MERDE";
+        if(GameManager.instance != null)
+            if (!GameManager.instance.GameStarted)
+                return;
+                
+        if (this.currentShotNumber <= 0)
+            return;
         
         this.currentShotNumber--;
         if (this.currentShotNumber == 0)
@@ -33,5 +28,10 @@ public class PlayerManager : MonoBehaviour
             //Defeat
             onShotNumberEmpty.Invoke();
         }
+    }
+
+    public void RestartPlayerManager()
+    {
+        this.currentShotNumber = this.defaultShotNumber;
     }
 }

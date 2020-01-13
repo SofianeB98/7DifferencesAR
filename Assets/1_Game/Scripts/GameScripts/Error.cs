@@ -15,4 +15,10 @@ public class Error : MonoBehaviour
         if(val)
             this.onFounded.Invoke();
     }
+
+    public void ResetError()
+    {
+        SetChecked(false);
+        // Autre ?
+    }
 }

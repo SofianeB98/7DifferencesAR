@@ -28,6 +28,10 @@ public class ErrorSelector : MonoBehaviour
 
     private void Shoot()
     {
+        if(GameManager.instance != null)
+            if (!GameManager.instance.GameStarted)
+                return;
+        
         RaycastHit hit;
         if (Physics.Raycast(this.startPoint.position, this.forwardDir.forward, out hit, this.rayLenght))
         {

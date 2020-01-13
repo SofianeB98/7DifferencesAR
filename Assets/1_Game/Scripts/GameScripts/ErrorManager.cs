@@ -27,6 +27,10 @@ public class ErrorManager : MonoBehaviour
     
     public void CheckSelectedError(Error error)
     {
+        if(GameManager.instance != null)
+            if (!GameManager.instance.GameStarted)
+                return;
+        
         if (this.errors.Contains(error))
         {
             if (error != null)
@@ -46,4 +50,13 @@ public class ErrorManager : MonoBehaviour
             }
         }
     }
+    
+    public void RestartErrorManager()
+    {
+        for (int i = 0; i < errors.Count; i++)
+        {
+            this.errors[i].ResetError();
+        }
+    }
+    
 }
