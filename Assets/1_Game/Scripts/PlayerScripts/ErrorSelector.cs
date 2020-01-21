@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class ErrorSelector : MonoBehaviour
@@ -32,10 +31,15 @@ public class ErrorSelector : MonoBehaviour
             if (!GameManager.instance.GameStarted)
                 return;
         
+        Debug.Log("Forward : " + this.forwardDir.forward);
+        Debug.Log("Position point : " + this.startPoint.position);
+        
         RaycastHit hit;
         if (Physics.Raycast(this.startPoint.position, this.forwardDir.forward, out hit, this.rayLenght))
         {
             Error err = hit.transform.GetComponent<Error>();
+            
+            Debug.Log("Quelque chose de toucher : " + hit.transform.name);
             this.onShoot.Invoke(err);
             return;
         }

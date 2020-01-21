@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour
@@ -6,7 +7,10 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private int defaultShotNumber = 10;
     private int currentShotNumber = 10;
 
+    [SerializeField] private TextMeshProUGUI shootText;
+    
     [SerializeField] private UnityEvent onShotNumberEmpty;
+    
     
     private void Awake()
     {
@@ -23,6 +27,9 @@ public class PlayerManager : MonoBehaviour
             return;
         
         this.currentShotNumber--;
+
+        this.shootText.text = "Coup restant : " + this.currentShotNumber.ToString("00"); 
+        
         if (this.currentShotNumber == 0)
         {
             //Defeat

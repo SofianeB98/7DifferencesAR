@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e570f7e53f7c847a18cf1d0c9eed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayLenght: 120
+  rayLenght: 200
   startPoint: {fileID: 0}
   forwardDir: {fileID: 0}
   onShoot:
@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultShotNumber: 10
+  shootText: {fileID: 0}
   onShotNumberEmpty:
     m_PersistentCalls:
       m_Calls:

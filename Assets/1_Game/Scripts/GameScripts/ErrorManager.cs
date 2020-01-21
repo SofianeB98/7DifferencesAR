@@ -24,33 +24,36 @@ public class ErrorManager : MonoBehaviour
             this.errors[i].SetChecked(false);
         }
     }
-    
+
     public void CheckSelectedError(Error error)
     {
-        if(GameManager.instance != null)
+        if (GameManager.instance != null)
             if (!GameManager.instance.GameStarted)
                 return;
-        
-        if (this.errors.Contains(error))
+
+        if (error != null)
         {
-            if (error != null)
+            Debug.Log("Une erreur est a check");
+            if (this.errors.Contains(error))
             {
+                Debug.Log("L erreur est contenu");
                 if (!error.IsChecked)
                 {
+                    Debug.Log("l erreur est desomais valider !");
                     this.foundedError++;
                     error.SetChecked(true);
                     this.OnErrorFounded.Invoke(error);
                 }
-            }
 
-            if (this.foundedError == this.errors.Count)
-            {
-                //Victory
-                this.onAllErrorFounded.Invoke();
+                if (this.foundedError == this.errors.Count)
+                {
+                    //Victory
+                    this.onAllErrorFounded.Invoke();
+                }
             }
         }
     }
-    
+
     public void RestartErrorManager()
     {
         for (int i = 0; i < errors.Count; i++)
@@ -58,5 +61,4 @@ public class ErrorManager : MonoBehaviour
             this.errors[i].ResetError();
         }
     }
-    
 }
