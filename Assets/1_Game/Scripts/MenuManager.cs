@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +19,18 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private string niveauTriggerName = "Niveau";
 
+    private void OnEnable()
+    {
+        if(DataManager.Instance != null)
+            DataManager.Instance.onDataLoaded.AddListener(EnableButtonLevel);
+    }
+
+    private void OnDisable()
+    {
+        if(DataManager.Instance != null)
+            DataManager.Instance.onDataLoaded.RemoveListener(EnableButtonLevel);
+    }
+    
     public void EnableNiveauPanel()
     {
         this.anim.SetTrigger(this.niveauTriggerName);
@@ -31,5 +44,10 @@ public class MenuManager : MonoBehaviour
     public void QuitApplication()
     {
         Application.Quit();
+    }
+
+    public void EnableButtonLevel(int index, bool value)
+    {
+        niveauxButtons[index].interactable = value;
     }
 }
