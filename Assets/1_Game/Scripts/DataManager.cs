@@ -68,6 +68,9 @@ public class DataManager : MonoBehaviour
         {
             onDataLoaded.Invoke(i, unlockedLevel[i]);
         }
+        
+        if(GameManager.instance != null && ErrorManager.Instance != null)
+            ErrorManager.Instance.onAllErrorFounded.AddListener(UnlockLevel);
     }
     
     /// <summary>

@@ -2,18 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class ErrorManager : MonoBehaviour
 {
+    public static ErrorManager Instance;
+    
     [SerializeField] private List<Error> errors = new List<Error>();
     private int foundedError = 0;
 
     [SerializeField] private ErrorEvent OnErrorFounded;
-    [SerializeField] private UnityEvent onAllErrorFounded;
+    public IntEvent onAllErrorFounded;
 
     private void Start()
     {
+        Instance = this;
+        
         InitError();
     }
 
@@ -48,7 +51,7 @@ public class ErrorManager : MonoBehaviour
                 if (this.foundedError == this.errors.Count)
                 {
                     //Victory
-                    this.onAllErrorFounded.Invoke();
+                    this.onAllErrorFounded.Invoke(GameManager.instance.Level);
                 }
             }
         }
