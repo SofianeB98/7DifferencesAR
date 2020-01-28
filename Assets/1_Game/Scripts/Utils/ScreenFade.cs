@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScreenFade : MonoBehaviour
 {
-    [SerializeField] private FadeType fade;
+    [SerializeField, Tooltip("FadeIn va aller de noir vers blanc, et fadeout de blanc vers noir")] private FadeType fade;
     [SerializeField] private RawImage screen;
     [SerializeField] private float fadetime = 2.0f;
     [SerializeField] private bool fadeOnStart = false;
@@ -29,7 +29,7 @@ public class ScreenFade : MonoBehaviour
         this.screen.color = col;
 
         float currentFade = 0.0f;
-        float waitTime = 0.1f / fadetime;
+        float waitTime = 0.05f / fadetime;
         
         while (currentFade < 1.0f)
         {
