@@ -39,8 +39,6 @@ public class DataManager : MonoBehaviour
                 unlockedLevel[i] = false;
                 onDataLoaded.Invoke(i, false);
             }
-            
-            
         }
         
         //Check si les PlayerPref exist
@@ -55,6 +53,8 @@ public class DataManager : MonoBehaviour
         }
         
         SceneManager.sceneLoaded += OnSceneLoaded;
+        
+        Debug.Log("On enbale data manager");
     }
 
     private void OnDisable()
@@ -81,6 +81,8 @@ public class DataManager : MonoBehaviour
     {
         if (level >= unlockedLevel.Length)
             return;
+        
+        Debug.Log("Level unlocked");
         
         unlockedLevel[level] = true;
         
