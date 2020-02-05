@@ -40,5 +40,6 @@ public class PlayerManager : MonoBehaviour
     public void RestartPlayerManager()
     {
         this.currentShotNumber = this.defaultShotNumber;
+        this.shootText.text = "Coup restant : " + this.currentShotNumber.ToString("00");
     }
 }
