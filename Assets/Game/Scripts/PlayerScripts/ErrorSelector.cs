@@ -14,6 +14,8 @@ public class ErrorSelector : MonoBehaviour
 
     private Vector2 offsetRangeShot = new Vector2(400.0f,200.0f);
 
+    private bool canShot = true;
+    
     private void Start()
     {
         this.offsetRangeShot.x = Screen.width / 1.706667f / 2;
@@ -22,6 +24,9 @@ public class ErrorSelector : MonoBehaviour
 
     private void Update()
     {
+        if (!this.canShot)
+            return;
+        
         if (Input.touchCount == 1)
         {
             Touch t = Input.GetTouch(0);
@@ -61,5 +66,15 @@ public class ErrorSelector : MonoBehaviour
         
         //Si le raycast ne touche rien, il faut notifier qu'on a tiré
         this.onShoot.Invoke(null);
+    }
+
+    public void SetCanShot(bool val)
+    {
+        this.canShot = val;
+    }
+
+    public void SetCanShot()
+    {
+        this.canShot = !this.canShot;
     }
 }
