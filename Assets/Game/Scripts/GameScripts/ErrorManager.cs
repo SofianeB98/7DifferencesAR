@@ -60,6 +60,8 @@ public class ErrorManager : MonoBehaviour
                 if (this.foundedError == this.errors.Count)
                 {
                     //Victory
+                    // Play a sound
+                    FindObjectOfType<AudioManager>().Play("Victory");
                     this.onAllErrorFounded.Invoke(GameManager.instance.Level);
                 }
             }

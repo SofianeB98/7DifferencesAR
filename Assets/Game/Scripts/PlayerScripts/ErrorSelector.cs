@@ -53,7 +53,10 @@ public class ErrorSelector : MonoBehaviour
         
         Debug.Log("Forward : " + this.forwardDir.forward);
         Debug.Log("Position point : " + this.startPoint.position);
-        
+
+        // Play a sound
+        FindObjectOfType<AudioManager>().Play("Shoot");
+
         RaycastHit hit;
         if (Physics.Raycast(this.startPoint.position, this.forwardDir.forward, out hit, this.rayLenght))
         {
