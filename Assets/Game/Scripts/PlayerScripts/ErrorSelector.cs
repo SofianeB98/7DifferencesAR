@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,12 +12,26 @@ public class ErrorSelector : MonoBehaviour
     [Space(10)] 
     [SerializeField] private ErrorEvent onShoot;
 
-    void Update()
+    private Vector2 offsetRangeShot = new Vector2(400.0f,200.0f);
+
+    private void Start()
+    {
+        this.offsetRangeShot.x = Screen.width / 1.706667f / 2;
+        this.offsetRangeShot.y = Screen.height / 1.706667f / 2;
+    }
+
+    private void Update()
     {
         if (Input.touchCount == 1)
         {
             Touch t = Input.GetTouch(0);
 
+            if (t.position.x > Screen.width / 2 + offsetRangeShot.x 
+                || t.position.x < Screen.width / 2 - offsetRangeShot.x
+                || t.position.y > Screen.height / 2 + offsetRangeShot.y
+                || t.position.y < Screen.height / 2 - offsetRangeShot.y)
+                return;
+                
             if (t.phase == TouchPhase.Began)
             {
                 //Shoot

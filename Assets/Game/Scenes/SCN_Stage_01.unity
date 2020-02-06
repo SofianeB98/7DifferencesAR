@@ -2196,6 +2196,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6448807129881308299, guid: d795a7f0d73dc664f983943303ad5ad0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.049804688
+      objectReference: {fileID: 0}
     - target: {fileID: 8379001596882926906, guid: d795a7f0d73dc664f983943303ad5ad0,
         type: 3}
       propertyPath: m_AnchorMin.y
