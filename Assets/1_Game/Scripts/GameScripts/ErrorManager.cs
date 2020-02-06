@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ErrorManager : MonoBehaviour
@@ -13,6 +14,8 @@ public class ErrorManager : MonoBehaviour
     [SerializeField] private ErrorEvent OnErrorFounded;
     public IntEvent onAllErrorFounded;
 
+    [SerializeField] private TextMeshPro errorFoundedText;
+    
     private void Start()
     {
         Instance = this;
@@ -22,6 +25,10 @@ public class ErrorManager : MonoBehaviour
 
     private void InitError()
     {
+        this.foundedError = 0;
+        
+        this.errorFoundedText.text = "Erreurs - " + this.foundedError.ToString() + "/" + this.errors.Count.ToString();
+        
         for (int i = 0; i < errors.Count; i++)
         {
             this.errors[i].SetChecked(false);
@@ -46,6 +53,8 @@ public class ErrorManager : MonoBehaviour
                     this.foundedError++;
                     error.SetChecked(true);
                     this.OnErrorFounded.Invoke(error);
+                    
+                    this.errorFoundedText.text = "Erreurs - " + this.foundedError.ToString() + "/" + this.errors.Count.ToString();
                 }
 
                 if (this.foundedError == this.errors.Count)
@@ -59,6 +68,7 @@ public class ErrorManager : MonoBehaviour
 
     public void RestartErrorManager()
     {
+        this.foundedError = 0;
         for (int i = 0; i < errors.Count; i++)
         {
             this.errors[i].ResetError();
