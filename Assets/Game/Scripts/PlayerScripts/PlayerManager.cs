@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private int defaultShotNumber = 10;
     private int currentShotNumber = 10;
 
-    [SerializeField] private TextMeshProUGUI shootText;
+    [SerializeField] private TextMeshPro shootText;
     
     [SerializeField] private UnityEvent onShotNumberEmpty;
     
@@ -28,7 +28,7 @@ public class PlayerManager : MonoBehaviour
         
         this.currentShotNumber--;
 
-        this.shootText.text = "Coup restant : " + this.currentShotNumber.ToString("00"); 
+        this.shootText.text = "Tirs - " + this.currentShotNumber.ToString("00") + "/" + this.defaultShotNumber.ToString("00"); 
         
         if (this.currentShotNumber == 0)
         {
@@ -40,6 +40,6 @@ public class PlayerManager : MonoBehaviour
     public void RestartPlayerManager()
     {
         this.currentShotNumber = this.defaultShotNumber;
-        this.shootText.text = "Coup restant : " + this.currentShotNumber.ToString("00");
+        this.shootText.text = "Tirs - " + this.currentShotNumber.ToString("00") + "/" + this.defaultShotNumber.ToString("00"); 
     }
 }
