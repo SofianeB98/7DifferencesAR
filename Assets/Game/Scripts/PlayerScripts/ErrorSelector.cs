@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ErrorSelector : MonoBehaviour
 {
@@ -58,6 +59,10 @@ public class ErrorSelector : MonoBehaviour
         if (Physics.Raycast(this.startPoint.position, this.forwardDir.forward, out hit, this.rayLenght))
         {
             Error err = hit.transform.GetComponent<Error>();
+            if (err == null)
+            {
+                err = hit.transform.GetComponent<ErrorLinker>().linkedError;
+            }
             
             Debug.Log("Quelque chose de toucher : " + hit.transform.name);
             this.onShoot.Invoke(err);
