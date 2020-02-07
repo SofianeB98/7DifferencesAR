@@ -464,6 +464,7 @@ GameObject:
   - component: {fileID: 1245708985712917449}
   - component: {fileID: 1245708985712917450}
   - component: {fileID: 1245708985712917451}
+  - component: {fileID: 4360308371055598132}
   m_Layer: 0
   m_Name: Chapeau
   m_TagString: Untagged
@@ -544,6 +545,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4360308371055598132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245708985712917429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7855f568ef064af43bb3f254a3a4c449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linkedError: {fileID: 1245708983964559198}
 --- !u!1 &1245708985899839564
 GameObject:
   m_ObjectHideFlags: 0
