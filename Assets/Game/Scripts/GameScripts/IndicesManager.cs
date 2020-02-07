@@ -29,7 +29,7 @@ public class IndicesManager : MonoBehaviour
     {
         if (this.currentIndices >= this.onIndiceUsed.Length)
             return;
-
+        
         this.onIndiceUsed[this.currentIndices++].Invoke();
         
         this.indicesText.text = "Indices - " + (this.onIndiceUsed.Length - currentIndices).ToString() + "/" +

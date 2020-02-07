@@ -25,10 +25,8 @@ public class PlayerManager : MonoBehaviour
                 
         if (this.currentShotNumber <= 0)
             return;
-
+        
         this.currentShotNumber--;
-        // Play a sound
-        FindObjectOfType<AudioManager>().Play("Life lost");
 
         this.shootText.text = "Tirs - " + this.currentShotNumber.ToString("00") + "/" + this.defaultShotNumber.ToString("00"); 
         
