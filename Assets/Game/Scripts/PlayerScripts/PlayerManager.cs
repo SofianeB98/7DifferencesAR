@@ -4,8 +4,9 @@ using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] private int defaultShotNumber = 10;
-    private int currentShotNumber = 10;
+    // Life variables
+    [SerializeField] private int defaultShotNumber = GameModeSettings.defaultLife;
+    private int currentShotNumber = GameModeSettings.defaultLife;
 
     [SerializeField] private TextMeshPro shootText;
     
