@@ -10,13 +10,39 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private TextMeshPro shootText;
     
     [SerializeField] private UnityEvent onShotNumberEmpty;
-    
+
+    // Game Mode Script
+    [SerializeField] private GameMode gameMode;
+
+    // Timer variables
+    [SerializeField] private float time;
+    [SerializeField] private int timeToInt;
     
     private void Awake()
     {
         this.currentShotNumber = defaultShotNumber;
+
+        if (gameMode.timerModeEnable)
+        {
+            time = gameMode.defaultTimer;
+        }
     }
-    
+
+    private void Update()
+    {
+        if (gameMode.timerModeEnable)
+        {
+            timeToInt = Mathf.RoundToInt(time);
+            time -= Time.deltaTime;
+
+            if (time <= 0)
+            {
+                //Defeat
+                onShotNumberEmpty.Invoke();
+            }
+        } 
+    }
+
     public void Shoot()
     {
         if(GameManager.instance != null)
@@ -40,6 +66,11 @@ public class PlayerManager : MonoBehaviour
     public void RestartPlayerManager()
     {
         this.currentShotNumber = this.defaultShotNumber;
-        this.shootText.text = "Tirs - " + this.currentShotNumber.ToString("00") + "/" + this.defaultShotNumber.ToString("00"); 
+        this.shootText.text = "Tirs - " + this.currentShotNumber.ToString("00") + "/" + this.defaultShotNumber.ToString("00");
+
+        if (gameMode.timerModeEnable)
+        {
+            time = gameMode.defaultTimer;
+        }
     }
 }

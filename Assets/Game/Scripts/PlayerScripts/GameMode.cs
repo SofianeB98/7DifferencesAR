@@ -5,17 +5,21 @@ using UnityEngine.UI;
 
 public class GameMode : MonoBehaviour
 {
-    [SerializeField] private bool freeModeEnable = true;
-    [SerializeField] private bool lifeModeEnable = false;
-    [SerializeField] private bool timerModeEnable = false;
+    // Game Mode State
+    [SerializeField] public bool freeModeEnable = true;
+    [SerializeField] public bool lifeModeEnable = false;
+    [SerializeField] public bool timerModeEnable = false;
 
-    [SerializeField] private int defaultLife = 10;
-    [SerializeField] private int defaultTimer = 180;
+    // Game Mode Data
+    [SerializeField] public int defaultLife = 10;
+    [SerializeField] public int defaultTimer = 180;
 
+    // Button State
     [SerializeField] private Button buttonFreeMode;
     [SerializeField] private Button buttonLifeMode;
     [SerializeField] private Button buttonTimerMode;
 
+    // Button background
     [SerializeField] private Sprite buttonEnableBackground;
     [SerializeField] private Sprite buttonDisableBackground;
 
