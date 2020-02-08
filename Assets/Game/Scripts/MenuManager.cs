@@ -14,10 +14,12 @@ public class MenuManager : MonoBehaviour
     [Header("Panels")] 
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject niveauxPanel;
+    [SerializeField] private GameObject gameModePanel;
 
     [Header("Animations")] 
     [SerializeField] private Animator anim;
     [SerializeField] private string niveauTriggerName = "Niveau";
+    [SerializeField] private string gameModeTriggerName = "Game mode";
 
     private void OnEnable()
     {
@@ -36,9 +38,14 @@ public class MenuManager : MonoBehaviour
         this.anim.SetTrigger(this.niveauTriggerName);
     }
 
+    public void EnableGameModePanel()
+    {
+        this.anim.SetTrigger(this.gameModeTriggerName);
+    }
+
     public void EnableCreditsPanel()
     {
-        
+
     }
 
     public void QuitApplication()
