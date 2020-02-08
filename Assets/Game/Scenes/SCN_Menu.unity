@@ -2666,7 +2666,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 100
+  m_fontSize: 74.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4338,7 +4338,7 @@ RectTransform:
   m_Children:
   - {fileID: 615675838}
   m_Father: {fileID: 2057205868}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4491,6 +4491,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 8300000, guid: 79aecbc94a14a74499d8835d01e26a5e,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2057205869}
+        m_MethodName: ActivateFreeMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5811,7 +5822,7 @@ RectTransform:
   m_Children:
   - {fileID: 2117845885}
   m_Father: {fileID: 2057205868}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5964,6 +5975,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 8300000, guid: 79aecbc94a14a74499d8835d01e26a5e,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2057205869}
+        m_MethodName: ActivateTimerMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7700,6 +7722,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2057205869}
+        m_MethodName: ActivateLifeMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1678497962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8850,7 +8883,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Activer les vies
+  m_text: Mode vie
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8878,7 +8911,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 100
+  m_fontSize: 74.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8919,10 +8952,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1916174621}
-    characterCount: 16
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -9653,6 +9686,7 @@ GameObject:
   - component: {fileID: 2057205867}
   - component: {fileID: 2057205866}
   - component: {fileID: 2057205865}
+  - component: {fileID: 2057205869}
   m_Layer: 5
   m_Name: PNL_Game_Mode
   m_TagString: Untagged
@@ -9732,17 +9766,41 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1362259798}
-  - {fileID: 1678497959}
   - {fileID: 1176516279}
+  - {fileID: 1678497959}
+  - {fileID: 1362259798}
   m_Father: {fileID: 482266571}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1924, y: -25.724976}
-  m_SizeDelta: {x: -1380.8, y: -662.7}
+  m_AnchoredPosition: {x: -0.15991211, y: 460.35}
+  m_SizeDelta: {x: -1883.4, y: -920.7}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2057205869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057205864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb6343d675bacd4c82d4061044cab28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeModeEnable: 1
+  lifeModeEnable: 0
+  timerModeEnable: 0
+  defaultLife: 10
+  defaultTimer: 180
+  buttonFreeMode: {fileID: 1176516281}
+  buttonLifeMode: {fileID: 1678497961}
+  buttonTimerMode: {fileID: 1362259800}
+  buttonEnableBackground: {fileID: 21300000, guid: 71a0786f91dd05147b86063bc06a0aae,
+    type: 3}
+  buttonDisableBackground: {fileID: 21300000, guid: f8ce1b8fdc6e60945a32d8156014f4a2,
+    type: 3}
 --- !u!1 &2117845884
 GameObject:
   m_ObjectHideFlags: 0
@@ -9798,7 +9856,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Activer temps
+  m_text: Mode temps
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9826,7 +9884,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 100
+  m_fontSize: 74.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9867,7 +9925,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2117845886}
-    characterCount: 13
+    characterCount: 10
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
