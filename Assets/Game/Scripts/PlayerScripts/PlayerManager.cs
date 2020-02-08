@@ -4,13 +4,13 @@ using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour
 {
-    // Life variables
-    [SerializeField] private int defaultShotNumber = GameModeSettings.defaultLife;
-    private int currentShotNumber = GameModeSettings.defaultLife;
-
     [SerializeField] private TextMeshPro shootText;
     
     [SerializeField] private UnityEvent onShotNumberEmpty;
+
+    // Life variables
+    [SerializeField] private int defaultShotNumber = GameModeSettings.defaultLife;
+    private int currentShotNumber = GameModeSettings.defaultLife;
 
     // Timer variables
     [SerializeField] private float time;
@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour
     {
         this.currentShotNumber = defaultShotNumber;
 
+        // Timer mode enable
         if (GameModeSettings.timerModeEnable)
         {
             time = GameModeSettings.defaultTimer;
@@ -28,6 +29,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+        // Timer mode enable
         if (GameModeSettings.timerModeEnable)
         {
             timeToInt = Mathf.RoundToInt(time);
@@ -66,6 +68,7 @@ public class PlayerManager : MonoBehaviour
         this.currentShotNumber = this.defaultShotNumber;
         this.shootText.text = "Tirs - " + this.currentShotNumber.ToString("00") + "/" + this.defaultShotNumber.ToString("00");
 
+        // Timer mode enable
         if (GameModeSettings.timerModeEnable)
         {
             time = GameModeSettings.defaultTimer;
