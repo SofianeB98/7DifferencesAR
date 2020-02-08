@@ -5,15 +5,6 @@ using UnityEngine.UI;
 
 public class GameMode : MonoBehaviour
 {
-    // Game Mode State
-    [SerializeField] public bool freeModeEnable = true;
-    [SerializeField] public bool lifeModeEnable = false;
-    [SerializeField] public bool timerModeEnable = false;
-
-    // Game Mode Data
-    [SerializeField] public int defaultLife = 10;
-    [SerializeField] public int defaultTimer = 180;
-
     // Button State
     [SerializeField] private Button buttonFreeMode;
     [SerializeField] private Button buttonLifeMode;
@@ -38,9 +29,9 @@ public class GameMode : MonoBehaviour
 
     public void ActivateFreeMode()
     {
-        freeModeEnable = true;
-        lifeModeEnable = false;
-        timerModeEnable = false;
+        GameModeSettings.freeModeEnable = true;
+        GameModeSettings.lifeModeEnable = false;
+        GameModeSettings.timerModeEnable = false;
 
         buttonFreeMode.GetComponent<Image>().sprite = buttonEnableBackground;
         buttonLifeMode.GetComponent<Image>().sprite = buttonDisableBackground;
@@ -49,9 +40,9 @@ public class GameMode : MonoBehaviour
 
     public void ActivateLifeMode()
     {
-        freeModeEnable = false;
-        lifeModeEnable = true;
-        timerModeEnable = false;
+        GameModeSettings.freeModeEnable = false;
+        GameModeSettings.lifeModeEnable = true;
+        GameModeSettings.timerModeEnable = false;
 
         buttonFreeMode.GetComponent<Image>().sprite = buttonDisableBackground;
         buttonLifeMode.GetComponent<Image>().sprite = buttonEnableBackground;
@@ -60,9 +51,9 @@ public class GameMode : MonoBehaviour
 
     public void ActivateTimerMode()
     {
-        freeModeEnable = false;
-        lifeModeEnable = false;
-        timerModeEnable = true;
+        GameModeSettings.freeModeEnable = false;
+        GameModeSettings.lifeModeEnable = false;
+        GameModeSettings.timerModeEnable = true;
 
         buttonFreeMode.GetComponent<Image>().sprite = buttonDisableBackground;
         buttonLifeMode.GetComponent<Image>().sprite = buttonDisableBackground;

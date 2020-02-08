@@ -11,9 +11,6 @@ public class PlayerManager : MonoBehaviour
     
     [SerializeField] private UnityEvent onShotNumberEmpty;
 
-    // Game Mode Script
-    [SerializeField] private GameMode gameMode;
-
     // Timer variables
     [SerializeField] private float time;
     [SerializeField] private int timeToInt;
@@ -22,15 +19,15 @@ public class PlayerManager : MonoBehaviour
     {
         this.currentShotNumber = defaultShotNumber;
 
-        if (gameMode.timerModeEnable)
+        if (GameModeSettings.timerModeEnable)
         {
-            time = gameMode.defaultTimer;
+            time = GameModeSettings.defaultTimer;
         }
     }
 
     private void Update()
     {
-        if (gameMode.timerModeEnable)
+        if (GameModeSettings.timerModeEnable)
         {
             timeToInt = Mathf.RoundToInt(time);
             time -= Time.deltaTime;
@@ -68,9 +65,9 @@ public class PlayerManager : MonoBehaviour
         this.currentShotNumber = this.defaultShotNumber;
         this.shootText.text = "Tirs - " + this.currentShotNumber.ToString("00") + "/" + this.defaultShotNumber.ToString("00");
 
-        if (gameMode.timerModeEnable)
+        if (GameModeSettings.timerModeEnable)
         {
-            time = gameMode.defaultTimer;
+            time = GameModeSettings.defaultTimer;
         }
     }
 }
