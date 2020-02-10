@@ -19,10 +19,10 @@ public class MenuManager : MonoBehaviour
     [Header("Animations")] 
     [SerializeField] private Animator anim;
     [SerializeField] private string niveauTriggerName = "Niveau";
-    [SerializeField] private string gameModeTriggerName = "Game mode";
 
     private void OnEnable()
     {
+        Debug.Log(anim.GetCurrentAnimatorStateInfo(0));
         if(DataManager.Instance != null)
             DataManager.Instance.onDataLoaded.AddListener(EnableButtonLevel);
     }
@@ -36,11 +36,6 @@ public class MenuManager : MonoBehaviour
     public void EnableNiveauPanel()
     {
         this.anim.SetTrigger(this.niveauTriggerName);
-    }
-
-    public void EnableGameModePanel()
-    {
-        this.anim.SetTrigger(this.gameModeTriggerName);
     }
 
     public void EnableCreditsPanel()

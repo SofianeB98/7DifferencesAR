@@ -9,38 +9,12 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private UnityEvent onShotNumberEmpty;
 
     // Life variables
-    [SerializeField] private int defaultShotNumber = GameModeSettings.defaultLife;
-    private int currentShotNumber = GameModeSettings.defaultLife;
+    [SerializeField] private int defaultShotNumber = 10;
+    private int currentShotNumber = 10;
 
-    // Timer variables
-    [SerializeField] private float time;
-    [SerializeField] private int timeToInt;
-    
     private void Awake()
     {
-        this.currentShotNumber = defaultShotNumber;
-
-        // Timer mode enable
-        if (GameModeSettings.timerModeEnable)
-        {
-            time = GameModeSettings.defaultTimer;
-        }
-    }
-
-    private void Update()
-    {
-        // Timer mode enable
-        if (GameModeSettings.timerModeEnable)
-        {
-            timeToInt = Mathf.RoundToInt(time);
-            time -= Time.deltaTime;
-
-            if (time <= 0)
-            {
-                //Defeat
-                onShotNumberEmpty.Invoke();
-            }
-        } 
+        this.currentShotNumber = GameModeSettings.gameMode == GameModeType.LIFE ? this.defaultShotNumber : 999999;
     }
 
     public void Shoot()
@@ -65,13 +39,8 @@ public class PlayerManager : MonoBehaviour
 
     public void RestartPlayerManager()
     {
-        this.currentShotNumber = this.defaultShotNumber;
+        this.currentShotNumber = GameModeSettings.gameMode == GameModeType.LIFE ? this.defaultShotNumber : 999999;
         this.shootText.text = "Tirs - " + this.currentShotNumber.ToString("00") + "/" + this.defaultShotNumber.ToString("00");
 
-        // Timer mode enable
-        if (GameModeSettings.timerModeEnable)
-        {
-            time = GameModeSettings.defaultTimer;
-        }
     }
 }
