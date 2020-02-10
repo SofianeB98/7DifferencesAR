@@ -63,10 +63,13 @@ public class ErrorSelector : MonoBehaviour
             {
                 err = hit.transform.GetComponent<ErrorLinker>().linkedError;
             }
-            
+            if(err == null)
+            {
+                Debug.Log("Ceci n'est pas une erreur");
+
+            }
             Debug.Log("Quelque chose de toucher : " + hit.transform.name);
             this.onShoot.Invoke(err);
-            return;
         }
         
         //Si le raycast ne touche rien, il faut notifier qu'on a tiré

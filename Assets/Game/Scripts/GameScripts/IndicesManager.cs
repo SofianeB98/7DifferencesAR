@@ -35,4 +35,18 @@ public class IndicesManager : MonoBehaviour
         this.indicesText.text = "Indices - " + (this.onIndiceUsed.Length - currentIndices).ToString() + "/" +
                                 this.onIndiceUsed.Length.ToString();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

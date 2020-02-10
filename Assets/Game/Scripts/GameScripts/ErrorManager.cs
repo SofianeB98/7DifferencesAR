@@ -16,6 +16,11 @@ public class ErrorManager : MonoBehaviour
 
     [SerializeField] private TextMeshPro errorFoundedText;
     
+    public List<Error> Errors
+    {
+        get => this.errors;
+    }
+
     private void Start()
     {
         Instance = this;
