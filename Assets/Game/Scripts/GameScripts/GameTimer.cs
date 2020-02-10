@@ -23,27 +23,35 @@ public class GameTimer : MonoBehaviour
     private WaitForSeconds oneSecond;
     private int currentIndexSpecifiedSeconds = 0;
     
-    private void Awake()
+    private void Start()
     {
         this.oneSecond = new WaitForSeconds(1.0f);
+        this.currentGameTimer = this.gameTime;
+        this.OnSecondElapsed_GameTimer.Invoke(this.currentGameTimer);
     }
 
     #region Timer Functions
 
     public void StartGameTimer()
     {
-        if(timer == null)
+        if(timer == null && GameModeSettings.gameMode == GameModeType.CHRONO)
             timer = StartCoroutine(nameof(GameTimerClock));
     }
 
     public void StopGameTimer()
     {
+        if (GameModeSettings.gameMode != GameModeType.CHRONO)
+            return;
+        
         StopCoroutine(timer);
         timer = null;
     }
 
     public void StopAndResetGameTimer()
     {
+        if (GameModeSettings.gameMode != GameModeType.CHRONO)
+            return;
+            
         StartGameTimer();
         ResetGameTimer();
         OnSecondElapsed_GameTimer.Invoke(this.currentGameTimer);
@@ -70,6 +78,9 @@ public class GameTimer : MonoBehaviour
 
     public void ResetGameTimer()
     {
+        if (GameModeSettings.gameMode != GameModeType.CHRONO)
+            return;
+        
         this.currentGameTimer = gameTime;
     }
     
