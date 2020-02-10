@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 5f99687cde15b5940bcdedddd5d66432
   - enabled: 1
     path: Assets/Game/Scenes/SCN_Stage_01.unity
-    guid: fada5df8deb3672449a58b4cadd1f69f
+    guid: ad7b6d482caf4174092acfd580229a9a
   - enabled: 1
     path: Assets/Game/Scenes/SCN_Stage_02.unity
     guid: c604b2d4a07ec5c419b347cfed4bb56c
