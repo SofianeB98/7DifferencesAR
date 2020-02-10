@@ -107,6 +107,8 @@ public class GameTimer : MonoBehaviour
         
         this.OnTimeElapsed_GameTimer.Invoke();
         
+        StopGameTimer();
+        
         yield break;
     }
 }
