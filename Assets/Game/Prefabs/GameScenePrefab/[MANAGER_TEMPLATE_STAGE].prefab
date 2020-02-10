@@ -139,6 +139,7 @@ Transform:
   - {fileID: 4049822931853602359}
   - {fileID: 4049822930701450324}
   - {fileID: 5862522334967392478}
+  - {fileID: 2983787640253728873}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -256,7 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0342ece509cb5144b812ea9142c23824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultShotNumber: 10
   shootText: {fileID: 0}
   onShotNumberEmpty:
     m_PersistentCalls:
@@ -283,8 +283,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  time: 10
-  timeToInt: 0
+  defaultShotNumber: 10
 --- !u!82 &895368966
 AudioSource:
   m_ObjectHideFlags: 0
@@ -381,6 +380,78 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &5295019197203753232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2983787640253728873}
+  - component: {fileID: 6491590082033818674}
+  - component: {fileID: 5642662576882388759}
+  m_Layer: 0
+  m_Name: '[GAME_MODE_MANAGER]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2983787640253728873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5295019197203753232}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.07480021, y: -0.0026719065, z: 0.06996545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4049822931250603710}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6491590082033818674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5295019197203753232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f5c69b984035164181ed919ea024426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameTimer: {fileID: 5642662576882388759}
+  markerUiFreeMode:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  markerUiChronoMode: []
+  markerUiLifeMode: []
+--- !u!114 &5642662576882388759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5295019197203753232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6386fae045ce897449a1f2b24e0cbb90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameTime: 120
+  onSpecifiedSecondElapsed_Value: []
+  OnSecondElapsed_GameTimer:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpecifiedSecondElapsed: []
+  OnTimeElapsed_GameTimer:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6628677520801380039
 GameObject:
   m_ObjectHideFlags: 0

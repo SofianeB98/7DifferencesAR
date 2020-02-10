@@ -12,13 +12,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private int defaultShotNumber = 10;
     private int currentShotNumber = 10;
 
-    // Timer variables
-    [SerializeField] private float time;
-    [SerializeField] private int timeToInt;
-    
     private void Awake()
     {
-        this.currentShotNumber = this.defaultShotNumber;
+        this.currentShotNumber = GameModeSettings.gameMode == GameModeType.LIFE ? this.defaultShotNumber : 999999;
     }
 
     public void Shoot()
@@ -43,7 +39,7 @@ public class PlayerManager : MonoBehaviour
 
     public void RestartPlayerManager()
     {
-        this.currentShotNumber = this.defaultShotNumber;
+        this.currentShotNumber = GameModeSettings.gameMode == GameModeType.LIFE ? this.defaultShotNumber : 999999;
         this.shootText.text = "Tirs - " + this.currentShotNumber.ToString("00") + "/" + this.defaultShotNumber.ToString("00");
 
     }
