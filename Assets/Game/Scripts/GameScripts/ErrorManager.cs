@@ -25,9 +25,24 @@ public class ErrorManager : MonoBehaviour
     {
         Instance = this;
         
+        RegisterErrors();
+        
         InitError();
     }
 
+    private void RegisterErrors()
+    {
+        Error[] err = FindObjectsOfType<Error>();
+
+        for (int i = 0; i < err.Length; i++)
+        {
+            if (errors.Contains(err[i]))
+                continue;
+            
+            errors.Add(err[i]);
+        }
+    }
+    
     private void InitError()
     {
         this.foundedError = 0;
