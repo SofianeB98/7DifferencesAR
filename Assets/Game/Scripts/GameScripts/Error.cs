@@ -13,7 +13,9 @@ public class Error : MonoBehaviour
         this.IsChecked = val;
         
         if(val)
+        {
             this.onFounded.Invoke();
+        }
     }
 
     public void ResetError()

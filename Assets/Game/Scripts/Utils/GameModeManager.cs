@@ -14,7 +14,9 @@ public class GameModeManager : MonoBehaviour
     private void Start()
     {
         if (GameModeSettings.gameMode != GameModeType.CHRONO)
+        {
             this.gameTimer.enabled = false;
+        }
     }
 
     public void CheckModeAndUi()

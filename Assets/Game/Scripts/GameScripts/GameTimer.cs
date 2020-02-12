@@ -35,13 +35,17 @@ public class GameTimer : MonoBehaviour
     public void StartGameTimer()
     {
         if(timer == null && GameModeSettings.gameMode == GameModeType.CHRONO)
+        {
             timer = StartCoroutine(nameof(GameTimerClock));
+        }
     }
 
     public void StopGameTimer()
     {
         if (GameModeSettings.gameMode != GameModeType.CHRONO)
+        {
             return;
+        }
         
         StopCoroutine(timer);
         timer = null;
@@ -50,7 +54,9 @@ public class GameTimer : MonoBehaviour
     public void StopAndResetGameTimer()
     {
         if (GameModeSettings.gameMode != GameModeType.CHRONO)
+        {
             return;
+        }
             
         StartGameTimer();
         ResetGameTimer();
@@ -79,7 +85,9 @@ public class GameTimer : MonoBehaviour
     public void ResetGameTimer()
     {
         if (GameModeSettings.gameMode != GameModeType.CHRONO)
+        {
             return;
+        }
         
         this.currentGameTimer = gameTime;
     }

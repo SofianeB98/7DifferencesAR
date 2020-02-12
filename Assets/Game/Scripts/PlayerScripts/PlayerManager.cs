@@ -41,6 +41,5 @@ public class PlayerManager : MonoBehaviour
     {
         this.currentShotNumber = GameModeSettings.gameMode == GameModeType.LIFE ? this.defaultShotNumber : 999999;
         this.shootText.text = "Tirs - " + this.currentShotNumber.ToString("00") + "/" + this.defaultShotNumber.ToString("00");
-
     }
 }

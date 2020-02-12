@@ -9,8 +9,8 @@ public class GameTimerUI : MonoBehaviour
 
     public void SetTimerText(float time)
     {
-        int second = (int)(time % 60 >= 60 ? 0 : time%60);
-        int minute = (int)(time / 60 >= 60 ? 0 : time/60);
+        int second = (int)(time % 60 >= 60 ? 0 : time % 60);
+        int minute = (int)(time / 60 >= 60 ? 0 : time / 60);
 
         this.timerText.text = "Temps - " + minute.ToString("00") + ":" + second.ToString("00");
     }
