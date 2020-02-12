@@ -724,8 +724,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 589.6, y: -104.6625}
-  m_SizeDelta: {x: 1139.2, y: 169.325}
+  m_AnchoredPosition: {x: 589.6, y: -81.07192}
+  m_SizeDelta: {x: 1139.2, y: 122.143845}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &115500857
 MonoBehaviour:
@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 239826594}
   - component: {fileID: 239826593}
   m_Layer: 5
-  m_Name: BTN_Menu
+  m_Name: BTN_Retour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1479,8 +1479,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 589.6, y: -672.63745}
-  m_SizeDelta: {x: 1139.2, y: 169.325}
+  m_AnchoredPosition: {x: 589.6, y: -507.50345}
+  m_SizeDelta: {x: 1139.2, y: 122.143845}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &239826593
 MonoBehaviour:
@@ -1554,17 +1554,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 8300000, guid: bed9dc7c8ccb539439586560bfba104f,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 608165415}
-        m_MethodName: EnableNiveauPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1768,11 +1757,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 482266571}
     m_Modifications:
-    - target: {fileID: 2876206280856644728, guid: 7f2791149a0fcec4ab47c426d43f1bec,
-        type: 3}
-      propertyPath: m_Name
-      value: ScreenFade_IMG
-      objectReference: {fileID: 0}
     - target: {fileID: 2876206280856644729, guid: 7f2791149a0fcec4ab47c426d43f1bec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1877,6 +1861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876206280856644728, guid: 7f2791149a0fcec4ab47c426d43f1bec,
+        type: 3}
+      propertyPath: m_Name
+      value: ScreenFade_IMG
       objectReference: {fileID: 0}
     - target: {fileID: 2876206280856644734, guid: 7f2791149a0fcec4ab47c426d43f1bec,
         type: 3}
@@ -3161,8 +3150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 589.6, y: -293.9875}
-  m_SizeDelta: {x: 1139.2, y: 169.325}
+  m_AnchoredPosition: {x: 589.6, y: -223.21576}
+  m_SizeDelta: {x: 1139.2, y: 122.143845}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &713332673
 MonoBehaviour:
@@ -5634,8 +5623,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 589.6, y: -483.3125}
-  m_SizeDelta: {x: 1139.2, y: 169.325}
+  m_AnchoredPosition: {x: 589.6, y: -365.35962}
+  m_SizeDelta: {x: 1139.2, y: 122.143845}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1423528940
 MonoBehaviour:
@@ -7749,7 +7738,7 @@ GameObject:
   - component: {fileID: 1971543515}
   - component: {fileID: 1971543514}
   m_Layer: 5
-  m_Name: TXT_Menu
+  m_Name: TXT_Retour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
