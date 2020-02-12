@@ -10,13 +10,13 @@ public class ErrorSelector : MonoBehaviour
     [SerializeField] private Transform startPoint;
     [SerializeField] private Transform forwardDir;
 
-    [Space(10)] 
+    [Space(10)]
     [SerializeField] private ErrorEvent onShoot;
-
-    private Vector2 offsetRangeShot = new Vector2(400.0f,200.0f);
+    [SerializeField] private ErrorEvent onShootMiss;
+    private Vector2 offsetRangeShot = new Vector2(400.0f, 200.0f);
 
     private bool canShot = true;
-    
+
     private void Start()
     {
         this.offsetRangeShot.x = Screen.width / 1.706667f / 2;
@@ -27,17 +27,17 @@ public class ErrorSelector : MonoBehaviour
     {
         if (!this.canShot)
             return;
-        
+
         if (Input.touchCount == 1)
         {
             Touch t = Input.GetTouch(0);
 
-            if (t.position.x > Screen.width / 2 + offsetRangeShot.x 
+            if (t.position.x > Screen.width / 2 + offsetRangeShot.x
                 || t.position.x < Screen.width / 2 - offsetRangeShot.x
                 || t.position.y > Screen.height / 2 + offsetRangeShot.y
                 || t.position.y < Screen.height / 2 - offsetRangeShot.y)
                 return;
-                
+
             if (t.phase == TouchPhase.Began)
             {
                 //Shoot
@@ -48,13 +48,13 @@ public class ErrorSelector : MonoBehaviour
 
     private void Shoot()
     {
-        if(GameManager.instance != null)
+        if (GameManager.instance != null)
             if (!GameManager.instance.GameStarted)
                 return;
-        
+
         Debug.Log("Forward : " + this.forwardDir.forward);
         Debug.Log("Position point : " + this.startPoint.position);
-        
+
         RaycastHit hit;
         if (Physics.Raycast(this.startPoint.position, this.forwardDir.forward, out hit, this.rayLenght))
         {
@@ -63,7 +63,7 @@ public class ErrorSelector : MonoBehaviour
             {
                 err = hit.transform.GetComponent<ErrorLinker>().linkedError;
             }
-            if(err == null)
+            if (err == null)
             {
                 Debug.Log("Ceci n'est pas une erreur");
 
@@ -71,9 +71,12 @@ public class ErrorSelector : MonoBehaviour
             Debug.Log("Quelque chose de toucher : " + hit.transform.name);
             this.onShoot.Invoke(err);
         }
-        
-        //Si le raycast ne touche rien, il faut notifier qu'on a tiré
-        this.onShoot.Invoke(null);
+        else
+        {
+
+            //Si le raycast ne touche rien, il faut notifier qu'on a tiré
+            this.onShootMiss.Invoke(null);
+        }
     }
 
     public void SetCanShot(bool val)
