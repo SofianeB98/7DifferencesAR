@@ -19,7 +19,9 @@ public class MenuManager : MonoBehaviour
     [Header("Animations")] 
     [SerializeField] private Animator anim;
     [SerializeField] private string niveauTriggerName = "Niveau";
-
+    [SerializeField] private string disableNiveauTriggerName = "DisableNiveau";
+    private bool niveauEnable = false;
+    
     private void OnEnable()
     {
         Debug.Log(anim.GetCurrentAnimatorStateInfo(0));
@@ -35,9 +37,22 @@ public class MenuManager : MonoBehaviour
     
     public void EnableNiveauPanel()
     {
-        this.anim.SetTrigger(this.niveauTriggerName);
+        if (!this.niveauEnable)
+        {
+            this.anim.SetTrigger(this.niveauTriggerName);
+            this.niveauEnable = true;
+        }
     }
 
+    public void DisableNiveauPanel()
+    {
+        if (this.niveauEnable)
+        {
+            this.anim.SetTrigger(this.disableNiveauTriggerName);
+            this.niveauEnable = false;
+        }
+    }
+    
     public void EnableCreditsPanel()
     {
 

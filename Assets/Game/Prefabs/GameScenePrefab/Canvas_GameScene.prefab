@@ -3970,6 +3970,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LogPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 7040335744480424106, guid: 31ab90b056608944a84a3f9ea7cc3fbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7040335744480424109, guid: 31ab90b056608944a84a3f9ea7cc3fbc,
         type: 3}
       propertyPath: m_LocalPosition.x

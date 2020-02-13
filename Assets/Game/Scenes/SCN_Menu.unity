@@ -1010,7 +1010,7 @@ PrefabInstance:
     - target: {fileID: 7040335744480424106, guid: 31ab90b056608944a84a3f9ea7cc3fbc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7040335744480424109, guid: 31ab90b056608944a84a3f9ea7cc3fbc,
         type: 3}
@@ -1117,17 +1117,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7040335744480424113, guid: 31ab90b056608944a84a3f9ea7cc3fbc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7040335744480424111, guid: 31ab90b056608944a84a3f9ea7cc3fbc,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 34577b8cbb4c2984e8309370649f110e,
         type: 3}
-    - target: {fileID: 7040335744480424113, guid: 31ab90b056608944a84a3f9ea7cc3fbc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31ab90b056608944a84a3f9ea7cc3fbc, type: 3}
 --- !u!224 &167461645 stripped
@@ -1559,6 +1559,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 608165415}
+        m_MethodName: DisableNiveauPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &239826594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1757,6 +1768,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 482266571}
     m_Modifications:
+    - target: {fileID: 2876206280856644728, guid: 7f2791149a0fcec4ab47c426d43f1bec,
+        type: 3}
+      propertyPath: m_Name
+      value: ScreenFade_IMG
+      objectReference: {fileID: 0}
     - target: {fileID: 2876206280856644729, guid: 7f2791149a0fcec4ab47c426d43f1bec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1862,16 +1878,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2876206280856644728, guid: 7f2791149a0fcec4ab47c426d43f1bec,
-        type: 3}
-      propertyPath: m_Name
-      value: ScreenFade_IMG
-      objectReference: {fileID: 0}
-    - target: {fileID: 2876206280856644734, guid: 7f2791149a0fcec4ab47c426d43f1bec,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7663254793997579109, guid: 7f2791149a0fcec4ab47c426d43f1bec,
         type: 3}
       propertyPath: fade
@@ -1881,6 +1887,11 @@ PrefabInstance:
         type: 3}
       propertyPath: fadeOnStart
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876206280856644734, guid: 7f2791149a0fcec4ab47c426d43f1bec,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f2791149a0fcec4ab47c426d43f1bec, type: 3}
@@ -2743,6 +2754,7 @@ MonoBehaviour:
   gameModePanel: {fileID: 26386076}
   anim: {fileID: 482266572}
   niveauTriggerName: Niveau
+  disableNiveauTriggerName: DisableNiveau
 --- !u!1 &672422681
 GameObject:
   m_ObjectHideFlags: 0
