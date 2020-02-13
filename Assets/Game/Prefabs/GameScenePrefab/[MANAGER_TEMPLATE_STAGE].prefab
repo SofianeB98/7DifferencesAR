@@ -158,7 +158,40 @@ MonoBehaviour:
   gameStarted: 0
   onGameStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5642662576882388759}
+        m_MethodName: ResetGameTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5642662576882388759}
+        m_MethodName: StartGameTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4049822931853602358}
+        m_MethodName: SetCanShot
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &4049822931853602356
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,12 +268,49 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 013b9a42ecd1d2e49b7add2cc9a0ef63,
+          m_ObjectArgument: {fileID: 8300000, guid: 7a4472324ddb121489a53b19e880e5b9,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Shoot
+          m_BoolArgument: 0
+        m_CallState: 2
+  onShootMiss:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4049822931853602345}
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4049822930701450327}
+        m_MethodName: CheckSelectedError
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Error, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: a6c118d6fd977f24380bbf2c7e9d640c,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &4049822931853602345
@@ -331,8 +401,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  markerUiChronoMode: []
-  markerUiLifeMode: []
+  markerUiChronoMode:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  markerUiLifeMode:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &5642662576882388759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,11 +425,44 @@ MonoBehaviour:
   onSpecifiedSecondElapsed_Value: []
   OnSecondElapsed_GameTimer:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: SetTimerText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnSpecifiedSecondElapsed: []
   OnTimeElapsed_GameTimer:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4049822931250603697}
+        m_MethodName: SetGameStarted
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &6628677520801380039
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,31 +537,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[SCENE_LOADER]'
       objectReference: {fileID: 0}
-    - target: {fileID: 7491624678517267982, guid: 26ef8fa77731f1c4281c07cb75a49235,
-        type: 3}
-      propertyPath: onSceneLoading.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7491624678517267982, guid: 26ef8fa77731f1c4281c07cb75a49235,
-        type: 3}
-      propertyPath: onSceneLoading.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LaunchFade
-      objectReference: {fileID: 0}
-    - target: {fileID: 7491624678517267982, guid: 26ef8fa77731f1c4281c07cb75a49235,
-        type: 3}
-      propertyPath: onSceneLoading.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7491624678517267982, guid: 26ef8fa77731f1c4281c07cb75a49235,
-        type: 3}
-      propertyPath: onSceneLoading.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7491624678517267982, guid: 26ef8fa77731f1c4281c07cb75a49235,
-        type: 3}
-      propertyPath: onSceneLoading.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7491624678517267983, guid: 26ef8fa77731f1c4281c07cb75a49235,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -507,6 +591,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491624678517267982, guid: 26ef8fa77731f1c4281c07cb75a49235,
+        type: 3}
+      propertyPath: onSceneLoading.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491624678517267982, guid: 26ef8fa77731f1c4281c07cb75a49235,
+        type: 3}
+      propertyPath: onSceneLoading.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LaunchFade
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491624678517267982, guid: 26ef8fa77731f1c4281c07cb75a49235,
+        type: 3}
+      propertyPath: onSceneLoading.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491624678517267982, guid: 26ef8fa77731f1c4281c07cb75a49235,
+        type: 3}
+      propertyPath: onSceneLoading.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491624678517267982, guid: 26ef8fa77731f1c4281c07cb75a49235,
+        type: 3}
+      propertyPath: onSceneLoading.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26ef8fa77731f1c4281c07cb75a49235, type: 3}

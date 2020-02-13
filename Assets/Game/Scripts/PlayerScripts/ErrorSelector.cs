@@ -51,10 +51,7 @@ public class ErrorSelector : MonoBehaviour
         if (GameManager.instance != null)
             if (!GameManager.instance.GameStarted)
                 return;
-
-        Debug.Log("Forward : " + this.forwardDir.forward);
-        Debug.Log("Position point : " + this.startPoint.position);
-
+        
         RaycastHit hit;
         if (Physics.Raycast(this.startPoint.position, this.forwardDir.forward, out hit, this.rayLenght))
         {
